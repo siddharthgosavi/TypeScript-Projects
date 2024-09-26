@@ -1,48 +1,30 @@
-// Object Type
-var person1 = {
-    name: "Siddharth",
-    age: 30
-};
-// array type
-var person2 = {
-    name: "Siddharth",
-    age: 30,
-    hobbies: ["reading", "coding"]
-};
-var favActivity;
-favActivity = ["sports"];
-console.log(person2.name + "'s hobbies are : ");
-for (var _i = 0, _a = person2.hobbies; _i < _a.length; _i++) {
-    var hobby = _a[_i];
-    console.log(hobby.toUpperCase());
+function combine(input1, input2) {
+    var result;
+    if (typeof input1 === "number" && input2 === "number2") {
+        result = input1 + input2;
+    }
+    else {
+        result = input1.toString() + " " + input2.toString();
+    }
+    return result;
 }
-//Tuple
-var person3 = {
-    name: "Siddharth",
-    age: 30,
-    hobbies: ["reading", "coding"],
-    role: [2, "author"]
-};
-person3.role.push("admin");
-// person3.role[1] = 10;
-console.log("Tuple Type: ", person3);
-//Enum type
-// const ADMIN = 0;
-// const READ_ONLY = 1;
-// const AUTHOR = 2;
-var Role;
-(function (Role) {
-    Role[Role["ADMIN"] = 0] = "ADMIN";
-    Role[Role["READ_ONLY"] = 1] = "READ_ONLY";
-    Role[Role["AUTHOR"] = 2] = "AUTHOR";
-})(Role || (Role = {}));
-var person4 = {
-    name: "Siddharth",
-    age: 30,
-    hobbies: ["reading", "coding"],
-    role: Role.ADMIN
-};
-console.log("Enum Type: ", person4);
-if (person4.role === Role.ADMIN) {
-    console.log(person4.name + " is Admin!");
+var combinedAges = combine(30, 26);
+var fullName = combine("Siddharth", "Gosavi");
+console.log("combinedAges  : " + combinedAges);
+console.log("fullName  : " + fullName);
+function combine1(input1, input2, resultConversion) {
+    var result;
+    if ((typeof input1 === "number" && input2 === "number") || resultConversion === "as-number") {
+        result = +input1 + +input2;
+    }
+    else {
+        result = input1.toString() + " " + input2.toString();
+    }
+    return result;
 }
+var combinedAges1 = combine1(30, 26, "as-number");
+var combinedAges2 = combine1("30", "26", "as-number");
+var fullName1 = combine1("Siddharth", "Gosavi", "as-text");
+console.log("combinedAges as-number : " + combinedAges1);
+console.log("combinedAges as-number : " + combinedAges2);
+console.log("fullName as-text : " + fullName);

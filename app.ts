@@ -1,72 +1,41 @@
-// Object Type
+//Union types Combinable
+type Combinable = number | string;
+function combine(input1: Combinable, input2: number | string) {
+  let result;
+  if (typeof input1 === "number" && input2 === "number2") {
+    result = input1 + input2;
+  } else {
+    result = input1.toString() + " " + input2.toString();
+  }
 
-const person1: {
-  name: string;
-  age: number;
-} = {
-  name: "Siddharth",
-  age: 30
-};
-
-// array type
-const person2 = {
-  name: "Siddharth",
-  age: 30,
-  hobbies: ["reading", "coding"]
-};
-
-let favActivity: string[];
-favActivity = ["sports"];
-
-console.log(person2.name + "'s hobbies are : ");
-
-for (const hobby of person2.hobbies) {
-  console.log(hobby.toUpperCase());
+  return result;
 }
 
-//Tuple
+const combinedAges = combine(30, 26);
+const fullName = combine("Siddharth", "Gosavi");
 
-const person3: {
-  name: string;
-  age: number;
-  hobbies: string[];
-  //role is having type tuple
-  role: [number, string];
-} = {
-  name: "Siddharth",
-  age: 30,
-  hobbies: ["reading", "coding"],
-  role: [2, "author"]
-};
+console.log("combinedAges  : " + combinedAges);
 
-person3.role.push("admin");
-// person3.role[1] = 10;
+console.log("fullName  : " + fullName);
 
-console.log("Tuple Type: ", person3);
+//litral types on resultConversion
+type CombinableDescriptor = "as-number" | "as-text";
+function combine1(input1: number | string, input2: number | string, resultConversion: CombinableDescriptor) {
+  let result;
+  if ((typeof input1 === "number" && input2 === "number") || resultConversion === "as-number") {
+    result = +input1 + +input2;
+  } else {
+    result = input1.toString() + " " + input2.toString();
+  }
 
-//Enum type
-// const ADMIN = 0;
-// const READ_ONLY = 1;
-// const AUTHOR = 2;
-
-enum Role {
-  ADMIN,
-  READ_ONLY,
-  AUTHOR
-}
-const person4 = {
-  name: "Siddharth",
-  age: 30,
-  hobbies: ["reading", "coding"],
-  role: Role.ADMIN
-};
-
-console.log("Enum Type: ", person4);
-if (person4.role === Role.ADMIN) {
-  console.log(person4.name + " is Admin!");
+  return result;
 }
 
-// Any type
+const combinedAges1 = combine1(30, 26, "as-number");
+const combinedAges2 = combine1("30", "26", "as-number");
+const fullName1 = combine1("Siddharth", "Gosavi", "as-text");
 
-let fruites: any[];
-fruites = ["apple", 2];
+console.log("combinedAges as-number : " + combinedAges1);
+console.log("combinedAges as-number : " + combinedAges2);
+
+console.log("fullName as-text : " + fullName);
