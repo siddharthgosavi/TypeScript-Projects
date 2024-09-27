@@ -3,11 +3,11 @@ function add(n1: number, n2: number) {
 }
 
 // following function have type void
-function printResult(num: number): void {
+function printResult2(num: number): void {
   console.log("Result: " + num);
 }
 
-printResult(add(5, 12));
+printResult2(add(5, 12));
 
 //Function types
 let combineValues: (a: number, b: number) => number;
