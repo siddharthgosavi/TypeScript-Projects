@@ -1,4 +1,5 @@
 console.log("===== Classes and Interfaces =====");
+console.log("===== Classes =====");
 
 class Department {
   // private readonly id: string;
