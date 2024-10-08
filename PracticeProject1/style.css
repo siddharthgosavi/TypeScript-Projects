@@ -35,6 +35,7 @@ textarea {
   width: 100%;
   max-width: 30rem;
   border: 1px solid #ccc;
+  border-radius: 10px;
 }
 
 input:focus,
@@ -50,6 +51,7 @@ button {
   cursor: pointer;
   color: white;
   padding: 0.75rem 1rem;
+  border-radius: 10px;
 }
 
 button:focus {
@@ -60,11 +62,13 @@ button:hover,
 button:active {
   background: #a80041;
   border-color: #a80041;
+  border-radius: 10px;
 }
 
 .projects {
   margin: 1rem;
   border: 1px solid #ff0062;
+  border-radius: 10px;
 }
 
 .projects header {
@@ -73,10 +77,13 @@ button:active {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 #finished-projects {
   border-color: #0044ff;
+  border-radius: 10px;
 }
 
 #finished-projects header {
@@ -136,6 +143,7 @@ button:active {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border-radius: 10px;
 }
 
 form div {
